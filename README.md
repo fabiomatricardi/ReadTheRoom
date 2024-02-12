@@ -26,7 +26,7 @@ and put them in the subdirectory `model`
 
 Changes in the code if using llama-cpp-python
 
-```
+```python
 import gradio as gr
 import os
 import datetime
@@ -49,16 +49,16 @@ print("loading model...")
 
 Call the inference
 
-```
+```python
 prompt = "<|im_start|>system\n"+ a 
          + "<|im_end|>\n<|im_start|>user\n" + b 
          + "<|im_end|>\n<|im_start|>assistant"
 output = llm(prompt, 
           temperature = temperature, 
           repetition_penalty = 1.15, 
-          max_new_tokens=max_new_tokens,
+          max_tokens=max_new_tokens,  #here is max_tokens
           stop = ['USER'],
-          echo=False)    #this is the only difference
+          echo=False)    #this is another difference
 
 ```
 
